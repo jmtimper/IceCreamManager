@@ -1,0 +1,22 @@
+<div class="container color-dark">
+  <div class="col">
+    <p>Design Ice Cream Order</p>
+  </div>
+  <div class="col">
+    <p>Ice Cream List ({{itemCount}})</p>
+  </div>
+</div>
+<div class="container color-light" [@flavors]="flavors.length">
+  <div class="col">
+    <p class="sm">Add new Ice Cream Flavor in blank below</p>
+    <form>
+      <input type="text" class="txt" name="item" placeholder="Flavor..." [(ngModel)]="flavorText" />
+      <input type="submit" class="btn" [value]="btnText" (click)="addItem()" />
+    </form>
+  </div>
+  <div class="col">
+    <p class="flavor-container" *ngFor="let flavor of flavors; let i = index" (click)="removeItem(i)">
+      {{flavor}}
+    </p>
+  </div>
+</div>

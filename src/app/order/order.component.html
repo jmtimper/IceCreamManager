@@ -1,0 +1,45 @@
+<div class="container color-dark">
+  <div class="col">
+    <p>Design Ice Cream</p>
+  </div>
+  <div class="col">
+    <p>Current Order</p>
+  </div>
+</div>
+<div class="container color-light" >
+  <div class="col">
+    <p class="sm">Select Flavor:</p>
+    <select [(ngModel)]="flavors" id="flavor" (ngModelChange)="updateFlavor()">
+      <option value="" disabled selected>>select a flavor</option>
+      <option *ngFor="let flavor of flavors" [value]="flavors.flavor" >{{flavor}}</option>
+    </select>
+  </div>
+  <div class="col">
+    <p class="flavor-container" *ngFor="let order of orders">
+      {{order}}
+    </p>
+  </div>
+  <div class="col">
+    <p class="sm">Select Cone:</p>
+    <select id="cone">
+      <option value="" disabled selected>>select a cone</option>
+      <option value="Sugar Cone">Sugar Cone</option>
+      <option value="Chocolate Sugar Cone">Chocolate Sugar Cone</option>
+      <option value="Sprinkle Sugar Cone">Sprinkle Sugar Cone</option>
+      <option value="Waffle Cone">Waffle Cone</option>
+      <option value="Chocolate Waffle Cone">Chocolate Waffle Cone</option>
+      <option value="Sprinkle Waffle Cone">Sprinkle Waffle Cone</option>
+    </select>
+  </div>
+  <div class="col">
+  </div>
+  <div class="col">
+    <p class="sm">Select Topping:</p>
+    <form action="/action_page.php">
+      <input type="checkbox" value="rsprinkles"> Rainbow Sprinkles<br>
+      <input type="checkbox" value="csprinkles"> Chocolate Sprinkles<br>
+      <input type="checkbox" value="hchocolate"> Hot Chocolate<br>
+      <input type="checkbox" value="cherry"> Cherry<br><br>
+    </form>
+  </div>
+</div>
