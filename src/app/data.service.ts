@@ -7,7 +7,7 @@ export class DataService {
 
   private flavors = new BehaviorSubject<any>(['Vanilla', 'Chocolate', 'Strawberry', 'Cookie Dough']);
   flavor = this.flavors.asObservable();
-  private orders = new BehaviorSubject<any>(['Flavor', 'Cone']);
+  private orders = new BehaviorSubject<any>(['Choose a flavor', 'Choose a cone']);
   order = this.orders.asObservable();
 
   constructor() { }

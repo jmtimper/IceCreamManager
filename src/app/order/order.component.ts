@@ -44,7 +44,15 @@ export class OrderComponent implements OnInit {
     this._data.order.subscribe(res => this.orders = res);
   }
 
-  updateFlavor() {
-    this.orders.push(this.flavors);
-    }
+  updateFlavor(flavor) {
+    this.orders[0] = flavor;
+  }
+
+  updateCone(cone) {
+    this.orders[1] = cone;
+  }
+
+  updateTopping(topping) {
+    this.orders.push(topping);
+  }
 }
